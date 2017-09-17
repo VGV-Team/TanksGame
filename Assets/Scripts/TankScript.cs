@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankScript : MonoBehaviour
+public class TankScript : UnitScript
 {
     public GameObject Projectile;
     public GameObject ProjectileStartLocation;
@@ -42,14 +42,19 @@ public class TankScript : MonoBehaviour
         GameObject projectile = (GameObject)Instantiate(Projectile,
                 ProjectileStartLocation.gameObject.transform.position,
                 ProjectileStartLocation.gameObject.transform.rotation
-            //gameObject.transform.Find("Body").Find("Turret").Find("Barrel").Find("BarrelEnd").position,
-            //gameObject.transform.Find("Body").Find("Turret").Find("Barrel").Find("BarrelEnd").rotation
             );
 
         projectile.GetComponent<ProjectileScript>().AliveTime = 2;
     }
 
-    public void Die()
+    public override void Hit(int damage)
+    {
+        Health -= damage;
+        if(Health <= 0)
+            Die();
+    }
+
+    public override void Die()
     {
         Destroy(gameObject);
     }

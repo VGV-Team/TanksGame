@@ -5,6 +5,8 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour {
 
     public float AliveTime;
+    public int Damage;
+    public float FlightSpeed;
 
     public ProjectileScript(Vector3 position, Quaternion rotation)
     {
@@ -24,7 +26,7 @@ public class ProjectileScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        gameObject.transform.Translate(gameObject.transform.forward * 10 * Time.deltaTime);
+        gameObject.transform.Translate(gameObject.transform.forward * FlightSpeed * Time.deltaTime);
 	    AliveTime -= Time.deltaTime;
 	    
 	}
@@ -37,12 +39,15 @@ public class ProjectileScript : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Enemy")
         {
+            // Destroy the projectile
             Destroy(gameObject);
 
-            collision.gameObject.GetComponent<TankScript>().Die();
+            // Start
+            collision.gameObject.GetComponent<UnitScript>().Hit(Damage);
         }
         else
         {
+            // Destroy the projectile
             Destroy(gameObject);
         }
 

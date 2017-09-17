@@ -109,7 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb45998f4289da4b9b9d491cbe4e7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AliveTime: 0
+  AliveTime: 2
+  Damage: 10
+  FlightSpeed: 10
 --- !u!135 &135702467669202744
 SphereCollider:
   m_ObjectHideFlags: 1
