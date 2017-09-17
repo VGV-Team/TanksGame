@@ -19,22 +19,24 @@ public class TankScript : UnitScript
 
     public void MoveForward()
     {
-        gameObject.transform.Translate(gameObject.transform.forward * Time.deltaTime);
+        Vector3 newPos = gameObject.transform.position + gameObject.transform.forward * 1 * Time.deltaTime;
+        gameObject.transform.position = newPos;
     }
 
     public void MoveBackward()
     {
-        gameObject.transform.Translate(gameObject.transform.forward * -1 * Time.deltaTime);
+        Vector3 newPos = gameObject.transform.position + gameObject.transform.forward * -1 * Time.deltaTime;
+        gameObject.transform.position = newPos;
     }
 
     public void TurnLeft()
     {
-        gameObject.transform.Rotate(0, 0, 50 * Time.deltaTime);
+        gameObject.transform.Rotate(0, -50 * Time.deltaTime, 0);
     }
 
     public void TurnRight()
     {
-        gameObject.transform.Rotate(0, 0, -50 * Time.deltaTime);
+        gameObject.transform.Rotate(0, 50 * Time.deltaTime, 0);
     }
 
     public void Shoot()
