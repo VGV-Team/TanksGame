@@ -6,18 +6,6 @@ public abstract class UnitScript : MonoBehaviour
 {
     public int Health;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public virtual void Hit(int damage)
     {
     }

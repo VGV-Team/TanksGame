@@ -395,6 +395,9 @@ MonoBehaviour:
   Health: 100
   Projectile: {fileID: 1192357532562460, guid: 236863343e4e2e44d9cefbf8979cd3d6, type: 2}
   ProjectileStartLocation: {fileID: 1816930290663192}
+  SpawnPoint: {fileID: 0}
+  Respawn: 1
+  MoveSpeed: 2
 --- !u!135 &135203987279255604
 SphereCollider:
   m_ObjectHideFlags: 1

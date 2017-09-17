@@ -6,6 +6,11 @@ public class TankScript : UnitScript
 {
     public GameObject Projectile;
     public GameObject ProjectileStartLocation;
+    public GameObject SpawnPoint;
+
+    public bool Respawn;
+
+    public float MoveSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -19,22 +24,22 @@ public class TankScript : UnitScript
 
     public void MoveForward()
     {
-        gameObject.transform.Translate(gameObject.transform.forward * Time.deltaTime);
+        gameObject.transform.Translate(gameObject.transform.forward * MoveSpeed * Time.deltaTime);
     }
 
     public void MoveBackward()
     {
-        gameObject.transform.Translate(gameObject.transform.forward * -1 * Time.deltaTime);
+        gameObject.transform.Translate(gameObject.transform.forward * -1 * MoveSpeed * Time.deltaTime);
     }
 
     public void TurnLeft()
     {
-        gameObject.transform.Rotate(0, 0, 50 * Time.deltaTime);
+        gameObject.transform.Rotate(0, 0, 50 * MoveSpeed * Time.deltaTime);
     }
 
     public void TurnRight()
     {
-        gameObject.transform.Rotate(0, 0, -50 * Time.deltaTime);
+        gameObject.transform.Rotate(0, 0, -50 * MoveSpeed * Time.deltaTime);
     }
 
     public void Shoot()
@@ -56,6 +61,15 @@ public class TankScript : UnitScript
 
     public override void Die()
     {
-        Destroy(gameObject);
+        if (Respawn)
+        {
+            gameObject.transform.position = SpawnPoint.transform.position;
+            gameObject.transform.eulerAngles = new Vector3(90, 0, 0);
+            Health = GlobalsScript.DefaultTankHealth;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
