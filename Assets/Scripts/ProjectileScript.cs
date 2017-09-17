@@ -35,7 +35,11 @@ public class ProjectileScript : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            // Ignore
+            // Destroy the projectile
+            Destroy(gameObject);
+
+            // Start
+            collision.gameObject.GetComponent<UnitScript>().Hit(Damage);
         }
         else if (collision.gameObject.tag == "Enemy")
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class UnitScript : MonoBehaviour
 {
+    public int MaxHealth;
     public int Health;
 
     public virtual void Hit(int damage)

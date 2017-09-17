@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTank: {fileID: 1781788906}
+  EnemyTank: {fileID: 1156464826}
 --- !u!4 &51843736
 Transform:
   m_ObjectHideFlags: 0
@@ -188,6 +189,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114838827708345116, guid: e06a92eb2aa835741837657ed36a629d,
+        type: 2}
+      propertyPath: PlayerTank
+      value: 
+      objectReference: {fileID: 1781788906}
+    - target: {fileID: 114838827708345116, guid: e06a92eb2aa835741837657ed36a629d,
+        type: 2}
+      propertyPath: EnemyTank
+      value: 
+      objectReference: {fileID: 1156464826}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e06a92eb2aa835741837657ed36a629d, type: 2}
   m_IsPrefabParent: 0
@@ -416,9 +427,19 @@ Prefab:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 114763121477294424, guid: 25864bba027368547816fb2ce3098c30,
+        type: 2}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25864bba027368547816fb2ce3098c30, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1156464826 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1530616393280796, guid: 25864bba027368547816fb2ce3098c30,
+    type: 2}
+  m_PrefabInternal: {fileID: 1156464825}
 --- !u!1 &1354077930
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb4b3ed49bbf89478c70827001774cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   Health: 100
 --- !u!1 &1415573935
 GameObject:
@@ -640,6 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb4b3ed49bbf89478c70827001774cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   Health: 100
 --- !u!1 &1717022290
 GameObject:

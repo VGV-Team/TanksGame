@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0a5f871436ebc468ee905cb738d2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   Health: 100
   Projectile: {fileID: 1192357532562460, guid: 236863343e4e2e44d9cefbf8979cd3d6, type: 2}
   ProjectileStartLocation: {fileID: 1816930290663192}

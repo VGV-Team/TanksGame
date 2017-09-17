@@ -70,7 +70,7 @@ public class TankScript : UnitScript
         {
             gameObject.transform.position = SpawnPoint.transform.position;
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
-            Health = GlobalsScript.DefaultTankHealth;
+            Health = MaxHealth;
         }
         else
         {

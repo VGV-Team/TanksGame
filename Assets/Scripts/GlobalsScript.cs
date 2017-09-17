@@ -4,5 +4,4 @@ using UnityEngine;
 
 public static class GlobalsScript
 {
-    public const int DefaultTankHealth = 100;
 }
