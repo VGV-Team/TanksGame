@@ -46,12 +46,15 @@ public class TankScript : UnitScript
 
     public void Shoot()
     {
-        GameObject projectile = (GameObject)Instantiate(Projectile,
+        if (Projectile != null && ProjectileStartLocation != null)
+        {
+            GameObject projectile = (GameObject)Instantiate(Projectile,
                 ProjectileStartLocation.gameObject.transform.position,
                 ProjectileStartLocation.gameObject.transform.rotation
             );
 
-        projectile.GetComponent<ProjectileScript>().AliveTime = 2;
+            projectile.GetComponent<ProjectileScript>().AliveTime = 2;
+        }
     }
 
     public override void Hit(int damage)
@@ -63,7 +66,7 @@ public class TankScript : UnitScript
 
     public override void Die()
     {
-        if (Respawn)
+        if (Respawn && SpawnPoint != null)
         {
             gameObject.transform.position = SpawnPoint.transform.position;
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);

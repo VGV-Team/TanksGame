@@ -13,7 +13,10 @@ public class InputScript : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+	    if (PlayerTank == null)
+	        return;
 
 	    if (Input.GetKey(KeyCode.W))
 	    {
