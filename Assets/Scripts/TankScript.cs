@@ -24,22 +24,24 @@ public class TankScript : UnitScript
 
     public void MoveForward()
     {
-        gameObject.transform.Translate(gameObject.transform.forward * MoveSpeed * Time.deltaTime);
+        Vector3 newPos = gameObject.transform.position + gameObject.transform.forward * 1 * MoveSpeed * Time.deltaTime;
+        gameObject.transform.position = newPos;
     }
 
     public void MoveBackward()
     {
-        gameObject.transform.Translate(gameObject.transform.forward * -1 * MoveSpeed * Time.deltaTime);
+        Vector3 newPos = gameObject.transform.position + gameObject.transform.forward * -1 * MoveSpeed * Time.deltaTime;
+        gameObject.transform.position = newPos;
     }
 
     public void TurnLeft()
     {
-        gameObject.transform.Rotate(0, 0, 50 * MoveSpeed * Time.deltaTime);
+        gameObject.transform.Rotate(0, -50 * MoveSpeed * Time.deltaTime, 0);
     }
 
     public void TurnRight()
     {
-        gameObject.transform.Rotate(0, 0, -50 * MoveSpeed * Time.deltaTime);
+        gameObject.transform.Rotate(0, 50 * MoveSpeed * Time.deltaTime, 0);
     }
 
     public void Shoot()
@@ -64,7 +66,7 @@ public class TankScript : UnitScript
         if (Respawn)
         {
             gameObject.transform.position = SpawnPoint.transform.position;
-            gameObject.transform.eulerAngles = new Vector3(90, 0, 0);
+            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
             Health = GlobalsScript.DefaultTankHealth;
         }
         else
